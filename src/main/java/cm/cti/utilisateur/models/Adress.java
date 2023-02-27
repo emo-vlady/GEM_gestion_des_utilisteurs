@@ -1,4 +1,4 @@
-package cm.cti.utilisateur.models;
+-package cm.cti.utilisateur.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
