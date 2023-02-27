@@ -1,7 +1,7 @@
 package cm.cti.utilisateur.securities.jwt;
 
 import cm.cti.utilisateur.dto.LoginDto;
-import cm.cti.utilisateur.dto.SecurityConstants;
+import cm.cti.utilisateur.enums.SecurityConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

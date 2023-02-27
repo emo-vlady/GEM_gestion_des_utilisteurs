@@ -1,4 +1,4 @@
-package cm.cti.utilisateur.dto;
+package cm.cti.utilisateur.enums;
 
 public class SecurityConstants {
     public static final String SECRET_KEY						= "7134743677397A24432646294A404E635266556A586E327235753878214125442A472D4B6150645367566B597033733676397924423F4528482B4D6251655468";
