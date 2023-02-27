@@ -31,7 +31,7 @@ public class Role {
 	
 	@ManyToMany(cascade = CascadeType.DETACH)
 	@JoinTable(name = "ROLE_AUTORISATION")
-	private List<Autorisation> autorisation;
+	private List<Autorisation> autorisations;
 	
 
 }

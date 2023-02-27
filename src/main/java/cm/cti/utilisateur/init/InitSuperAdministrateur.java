@@ -32,14 +32,14 @@ public class InitSuperAdministrateur  implements ApplicationRunner{
 			autorisationService.add(new Autorisation(null, RoleEnum.ROLE_GESTION_VISITEUR));
 		}
 		
-		if(gestionVisiteur == null) {
+		if(gestionAutorisation == null) {
 			autorisationService.add(new Autorisation(null, RoleEnum.ROLE_GESTION_AUTORISATION));
 			
 		}
-		if(gestionVisiteur == null) {
+		if(gestionEmploye == null) {
 			autorisationService.add(new Autorisation(null, RoleEnum.ROLE_GESTION_EMPLOYER));
 		}
-		if(gestionVisiteur == null) {
+		if(gestionAdministration == null) {
 			autorisationService.add(new Autorisation(null, RoleEnum.ROLE_GESTION_ADMINISTRATEUR));
 		}
 		

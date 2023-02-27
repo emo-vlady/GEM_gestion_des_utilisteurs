@@ -37,10 +37,15 @@ public class AutorisationControleur {
 	public Autorisation create(
 			@RequestBody Autorisation autorisation
 			) {
-		autorisation.setId(null);
+		if(autorisationService.findByName(autorisation.getName()) != null) {
+			return null;
+		} else {
+			autorisation.setId(null);
+			
+			autorisationService.add(autorisation);
+			return autorisation;
+		}
 		
-		autorisationService.add(autorisation);
-		return autorisation;
 	}
 	
 	@PutMapping

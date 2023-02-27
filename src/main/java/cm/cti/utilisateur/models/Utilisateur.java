@@ -35,4 +35,8 @@ public class Utilisateur {
 	@JoinColumn ( name = "Personne")
 	private Personne personne;
 	
+	@OneToOne(cascade= CascadeType.DETACH)
+	@JoinColumn(name= "Role")
+	private Role role;
+	
 }
