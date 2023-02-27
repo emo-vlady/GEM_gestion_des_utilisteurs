@@ -1,6 +1,6 @@
 package cm.cti.utilisateur.securities.config;
 
-import cm.connect.technology.lotostudio.customers.securities.jwt.JWTAutorizationFilter;
+import cm.cti.utilisateur.securities.jwt.JWTAutorizationFilter;
 import cm.connect.technology.lotostudio.customers.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

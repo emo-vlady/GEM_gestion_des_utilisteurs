@@ -1,26 +1,26 @@
 package cm.cti.utilisateur.securities.jwt;
 
-import static cm.connect.technology.lotostudio.customers.util.FormUtilitaire.getKeyToken;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-
+import cm.cti.utilisateur.dto.SecurityConstants;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import cm.connect.technology.lotostudio.customers.enums.SecurityConstants;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.security.Key;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 
 public class JWTAutorizationFilter extends OncePerRequestFilter{
 	
@@ -59,6 +59,10 @@ public class JWTAutorizationFilter extends OncePerRequestFilter{
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}
 		}
+	}
+
+	public static Key getKeyToken() {
+		return Keys.hmacShaKeyFor(Decoders.BASE64.decode(SecurityConstants.SECRET_KEY));
 	}
 
 }
